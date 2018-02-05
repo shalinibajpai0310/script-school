@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink,Link } from 'react-router-dom';
 import '../app.css';
 
 
@@ -38,7 +39,9 @@ class CourseList extends Component {
                     <div className="col-xs-3">
                         <div className="box sc-box-even container-fluid">
                             <div className="row">
-                                <div className="col-xs-11 col-xs-offset-1 sc-box-title-even">ES6</div>
+                                <div className="col-xs-11 col-xs-offset-1 sc-box-title-even">
+                                    <Link to='/script-school/es6'><span>ES6</span></Link>
+                                </div>
                             </div>
                             <div className="row sc-box-subtitle">
                                 <div className="col-xs-3  col-xs-offset-1">

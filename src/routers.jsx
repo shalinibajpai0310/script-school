@@ -9,14 +9,25 @@ import './index.css';
 import HomePageContent from './components/homepage-content';
 import QuesAnswer from './components/que-ans';
 import HomePage from './HomePage';
-import Routers from './routers';
 import App from './app';
 import './app.css';
-import registerServiceWorker from './registerServiceWorker';
 
+class Routers extends React.Component{
 
-ReactDOM.render(
-    <BrowserRouter>
-      <Routers/>
-  </BrowserRouter>, document.getElementById('root'));
-registerServiceWorker();
+    componentWillMount(){
+    if( window.location.pathname === '/')
+      window.location.pathname = '/script-school'
+  }
+
+    render(){
+        return(
+        <Switch>
+            <Route exact path='/script-school' component={HomePage}/>
+            <Route exact path='/script-school/es6' component={App}/>
+            <Route path='/script-school/es6/:topic' component={App}/>
+      </Switch>
+        )
+    }
+}
+
+export default Routers;

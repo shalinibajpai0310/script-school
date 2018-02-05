@@ -13,17 +13,24 @@ import Footer from './components/footer.jsx';
 import TopicList from './components/topic-list';
 import FeedBack from './components/feedback';
 import Subscribe from './components/subscription';
+import HomePageContent from './components/homepage-content';
+import QuesAnswer from './components/que-ans';
 //import { originalFlow } from './json/sampleFlowData.js';
 
 
 class App extends Component {
-  componentDidMount(){
+  constructor(props){
+    super(props);
+  }
 
+  componentDidMount(){
+    window.scrollTo(0, 0)
   }
 
   componentWillMount(){
-    if( window.location.pathname == '/')
-      window.location.pathname = '/es6'
+    console.log("Pattern");
+    // if( window.location.pathname == '/')
+    //   window.location.pathname = '/es6'
 
     // if( window.location.pathname !== '/es6' && window.location.pathname !== '/es6/')
     //   window.location.pathname = '/es6'
@@ -33,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/*<div className="row">
+        {<div className="row">
           <nav className="mobile-nav-bar-section navbar navbar-default navbar-fixed-top">
             <MobNavigation/>
           </nav>
@@ -41,18 +48,20 @@ class App extends Component {
             <NavigationSection/>
           </div>
           <div className="col-sm-6 col-md-7 col-lg-7 content-section mobile-content">
-            <ContentSection/>
+           { /*<ContentSection/>*/}
+           { this.props.match.path === "/script-school/es6" ? <HomePageContent/> : <QuesAnswer topic={this.props.match.params.topic}/>}
+           
           </div>
           <div className="col-sm-2 col-md-2 col-lg-2 right-info-section">
             <RightInfoSection/>
           </div>
-        </div>*/}
-        <NavigationBar />
+        </div>}
+     { /*  <NavigationBar />
         <CourseList />
         <TopicList/>
         <FeedBack/>
         <Subscribe/>
-        <Footer />
+        <Footer />*/}
       </div>
     );
   }

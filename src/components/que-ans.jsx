@@ -34,11 +34,12 @@ componentWillReceiveProps = () =>{
 
 }
   render() {
+      debugger;
       console.log("render called");
       const divStyle={
           display:'none'
       }
-      const topic = this.props.match.params.topic;
+      const topic = this.props.topic;
       let questions = [],title = '';
       data.es6.filter( (topics)=>{
                 topics.sub_menu.map((sub_topic) => {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink,Link } from 'react-router-dom';
 import '../app.css';
 
 
@@ -19,7 +20,7 @@ class NavigationBar extends Component {
             <div className="col-xs-5">
                 <ul className="nav navbar-nav">
                     <li className="active"><a href="#">JS</a></li>
-                    <li><a href="#">ES6</a></li>
+                    <li><Link to='/script-school/es6'>ES6</Link></li>
                     <li><a href="#">ReactJS</a></li>
                     <li><a href="#">AngularJS</a></li>
                     <li><a href="#">Algorithms</a></li>
