@@ -1,4 +1,4 @@
-export const data = {
+exports.data = {
 	"es6": [
 	  {
 		"menu": "New ES6 Syntax",

@@ -8,9 +8,9 @@ class HomePageContent extends Component {
  }
 
  componentDidMount(){
-    fetch('/api/hello')
+    fetch('/script-school/es6')
       .then(res => res.json())
-      .then(data => console.log("users ",data.express));
+      .then(data => console.log("users ",data));
  }
   render() {
     return (
