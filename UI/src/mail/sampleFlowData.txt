@@ -1,0 +1,772 @@
+export const originalFlow = {
+  "eformFlow": {
+    "progressSteps": [{
+      "name": "Suitability",
+      "order": 2,
+      "type": "step",
+      "renderConditionaly": false,
+      "eforms": [],
+      "startPage": null,
+      "nextCaption": null,
+      "showSaveFormButton": false,
+      "initialisationActions": [],
+      "postSaveActions": [],
+      "addStatusExpression": false,
+      "flowParams": [],
+      "progressSubSteps": [ {
+        "name": "Important Considerations(FL)",
+        "order": 2,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["FL_SUITABILITY_CONSIDERATIONS"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      },{
+        "name": "Personal",
+        "order": 1,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["SUITABILITY_PERSON", "FL_SUITABILITY_PERSON"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      },{
+        "name": "Financial",
+        "order": 3,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["SUITABILITY_FINANCE", "FL_SUITABILITY_FINANCE"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "EFORM_FORCE_PAGE_COMPLETE",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Important Considerations",
+        "order": 4,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["SUITABILITY_CONSIDERATIONS"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Fund Sources",
+        "order": 5,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["SUITABILITY_FUND"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Additional Information",
+        "order": 6,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["FL_ADDITIONAL_INFO"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Signature Acknowledgements",
+        "order": 7,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["FL_SUITABILITY_SIG_ACK"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Supplement",
+        "order": 8,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["FL_SUITABILITY_SUPPLEMENT"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }]
+    }, {
+      "name": "Additional",
+      "order": 3,
+      "type": "step",
+      "renderConditionaly": true,
+      "eforms": [],
+      "startPage": null,
+      "nextCaption": null,
+      "showSaveFormButton": false,
+      "initialisationActions": [],
+      "postSaveActions": [],
+      "addStatusExpression": false,
+      "flowParams": [],
+      "progressSubSteps": [{
+        "name": "Replacement",
+        "order": 1,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["CA_REP_NOTICE", "WY_REP_NOTICE", "IL_REP_NOTICE", "DE_REP_NOTICE", "MO_REP_NOTICE", "OK_REP_NOTICE", "ID_REP_NOTICE", "TN_REP_NOTICE", "NV_REP_NOTICE", "FL_REP_NOTICE", "OR_VT_REP_NOTICE", "STANDARD_REP_NOTICE", "AK_REP_NOTICE", "AZ_REP_NOTICE", "MN_REP_NOTICE", "MA_REP_NOTICE", "PA_REP_NOTICE", "WA_REP_NOTICE"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "1035 Transfer",
+        "order": 2,
+        "type": "SUB_STEP",
+        "renderConditionaly": true,
+        "eforms": ["1035TRANSFER"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "EFORM_FORCE_PAGE_COMPLETE",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }]
+    }, {
+      "name": "Application",
+      "order": 1,
+      "type": "step",
+      "renderConditionaly": false,
+      "eforms": [],
+      "startPage": null,
+      "nextCaption": null,
+      "showSaveFormButton": false,
+      "initialisationActions": [],
+      "postSaveActions": [],
+      "addStatusExpression": false,
+      "flowParams": [],
+      "progressSubSteps": [ {
+        "name": "Annuitant",
+        "order": 2,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["ANNUITANT"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      },{
+        "name": "Owner",
+        "order": 1,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["PERSON"],
+        "startPage": "FLOW_XHTML",
+        "nextCaption": null,
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "CALL_METHOD",
+          "action": "LOAD_CASE",
+          "flowParam": null
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "EFORM_FORCE_PAGE_COMPLETE",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "DISPLAY_VALIDATION_MSG",
+            "value": "true"
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "SAVE_VALIDATION_MSG",
+            "value": "true"
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "PRESERVE_VALIDATION_MSG",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "RANDOM_NAVIGATION",
+            "value": "true"
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "SHOW_SINGLE_PAGE",
+            "value": "true"
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Beneficiary",
+        "order": 3,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["BENEFICIARY"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Annuity Details",
+        "order": 4,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["ANNUITY_PURPOSE"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Crediting Options",
+        "order": 5,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["CREDITING_OPTIONS"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }, {
+        "name": "Authorization",
+        "order": 6,
+        "type": "SUB_STEP",
+        "renderConditionaly": false,
+        "eforms": ["AUTHORIZATION"],
+        "startPage": null,
+        "nextCaption": "next.button.label",
+        "showSaveFormButton": false,
+        "initialisationActions": [{
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": true,
+            "param": "RENDER_VIEWER",
+            "value": ""
+          }
+        }, {
+          "initType": "SET_PARAM",
+          "action": null,
+          "flowParam": {
+            "evaluate": false,
+            "param": "IS_LAST_PAGE",
+            "value": "false"
+          }
+        }],
+        "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+        "addStatusExpression": true,
+        "flowParams": [],
+        "progressSubSteps": []
+      }]
+    }, {
+      "name": "Statement of Understanding",
+      "order": 4,
+      "type": "step",
+      "renderConditionaly": false,
+      "eforms": ["STATEMENT_OF_UNDERSTANDING "],
+      "startPage": null,
+      "nextCaption": "next.button.label",
+      "showSaveFormButton": false,
+      "initialisationActions": [{
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": true,
+          "param": "RENDER_VIEWER",
+          "value": ""
+        }
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "IS_LAST_PAGE",
+          "value": "false"
+        }
+      }],
+      "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY_WITH_CONDN"],
+      "addStatusExpression": true,
+      "flowParams": [],
+      "progressSubSteps": []
+    }, {
+      "name": "Payment",
+      "order": 5,
+      "type": "step",
+      "renderConditionaly": false,
+      "eforms": ["PAYMENT_FORM "],
+      "startPage": null,
+      "nextCaption": "next.button.label",
+      "showSaveFormButton": false,
+      "initialisationActions": [{
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": true,
+          "param": "RENDER_VIEWER",
+          "value": ""
+        }
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "IS_LAST_PAGE",
+          "value": "false"
+        }
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "DOCUMENT_MAPPING_KEY",
+          "value": "Payment"
+        }
+      }],
+      "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY"],
+      "addStatusExpression": true,
+      "flowParams": [],
+      "progressSubSteps": []
+    }, {
+      "name": "Documents",
+      "order": 6,
+      "type": "step",
+      "renderConditionaly": false,
+      "eforms": ["DOCUMENT"],
+      "startPage": null,
+      "nextCaption": "next.button.label",
+      "showSaveFormButton": false,
+      "initialisationActions": [{
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "RENDER_VIEWER",
+          "value": "false"
+        }
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "IS_LAST_PAGE",
+          "value": "false"
+        }
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "DISPLAY_MESSAGE",
+          "value": "false"
+        }
+      }],
+      "postSaveActions": ["SAVE_CASE", "COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "UPDATE_USER_ACTIVITY"],
+      "addStatusExpression": true,
+      "flowParams": [],
+      "progressSubSteps": []
+    }, {
+      "name": "Complete",
+      "order": 7,
+      "type": "step",
+      "renderConditionaly": false,
+      "eforms": ["COMPLETE"],
+      "startPage": null,
+      "nextCaption": "next.button.label",
+      "showSaveFormButton": false,
+      "initialisationActions": [{
+        "initType": "CALL_METHOD",
+        "action": "IGO_CHECK_WITH_SAVE_DISP_RESULT",
+        "flowParam": null
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "RENDER_VIEWER",
+          "value": "false"
+        }
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "IS_LAST_PAGE",
+          "value": "true"
+        }
+      }, {
+        "initType": "SET_PARAM",
+        "action": null,
+        "flowParam": {
+          "evaluate": false,
+          "param": "DISPLAY_MESSAGE",
+          "value": "false"
+        }
+      }],
+      "postSaveActions": ["COMPLETE_EFORM", "CHECK_REQUIRED_FIELDS", "SAVE_EFORM", "ASYNC_RESOLVE_TASKS"],
+      "addStatusExpression": true,
+      "flowParams": [{
+        "evaluate": true,
+        "param": "CASE_ID",
+        "value": ""
+      }, {
+        "evaluate": false,
+        "param": "SUPPRESS_SIGNATURES",
+        "value": "true"
+      }],
+      "progressSubSteps": []
+    }],
+    "finish": {
+      "finishPage": "TASK_DASHBOARD",
+      "nextCaption": "Finish",
+      "flowParams": [{
+        "evaluate": true,
+        "param": "OU_ID",
+        "value": ""
+      }],
+      "postSaveActions": [],
+      "name": null,
+      "eforms": [],
+      "showSaveFormButton": false,
+      "renderConditionaly": false,
+      "initialisationActions": [],
+      "addStatusExpression": false,
+      "startPage": null
+    },
+    "name": "TESTNewCaseFlow",
+    "showCancelButton": false
+  },
+  "status": null,
+  "errors": []
+}

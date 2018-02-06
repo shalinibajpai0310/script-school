@@ -1,23 +1,12 @@
 {
-  "name": "samplees6",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1",
-    "js-beautify": "^1.6.14",
-    "react": "^15.6.1",
-    "react-bootstrap": "^0.31.3",
-    "react-dom": "^15.6.1",
-    "react-highlight": "^0.10.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.13",
-    "react-syntax-highlight": "^15.3.1"
-  },
+  "name": "script-school",
+  "version": "1.0.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "client": "cd UI && npm start",
+    "server": "cd server && node server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
   }
 }
