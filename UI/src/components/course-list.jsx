@@ -6,9 +6,20 @@ import '../app.css';
 class CourseList extends Component {
  constructor(props){
      super(props);
+     this.getData = this.getData.bind(this);
  }
 
- 
+ getData(){
+     fetch('/script-school/es6')
+      .then(res => res.json())
+      .then(response => {
+          this.setState({
+              list : response.data
+          });
+          this.props.history.push('/script-school/es6');
+      });
+ }
+
   render() {
     return (<section className="container-fluid sc-course-container">
         <div className="row sc-course-layout">
@@ -40,7 +51,7 @@ class CourseList extends Component {
                         <div className="box sc-box-even container-fluid">
                             <div className="row">
                                 <div className="col-xs-11 col-xs-offset-1 sc-box-title-even">
-                                    <Link to='/script-school/es6'><span>ES6</span></Link>
+                                   <Link to='/script-school/es6'><span>ES6</span></Link>
                                 </div>
                             </div>
                             <div className="row sc-box-subtitle">

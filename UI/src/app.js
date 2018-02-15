@@ -21,26 +21,29 @@ import QuesAnswer from './components/que-ans';
 class App extends Component {
   constructor(props){
     super(props);
+     this.state={
+         list:{}
+     }
   }
 
   componentDidMount(){
     window.scrollTo(0, 0)
+      // fetch('/script-school/es6')
+      // .then(res => res.json())
+      // .then(response => {
+      //     this.setState({
+      //         list : response.data
+      //     });
+      // });
   }
 
   componentWillMount(){
-    console.log("Pattern");
-    // if( window.location.pathname == '/')
-    //   window.location.pathname = '/es6'
-
-    // if( window.location.pathname !== '/es6' && window.location.pathname !== '/es6/')
-    //   window.location.pathname = '/es6'
-
   }
 
   render() {
     return (
       <div>
-        {<div className="row">
+        <div className="row">
           <nav className="mobile-nav-bar-section navbar navbar-default navbar-fixed-top">
             <MobNavigation/>
           </nav>
@@ -55,7 +58,7 @@ class App extends Component {
           <div className="col-sm-2 col-md-2 col-lg-2 right-info-section">
             <RightInfoSection/>
           </div>
-        </div>}
+        </div>
      { /*  <NavigationBar />
         <CourseList />
         <TopicList/>

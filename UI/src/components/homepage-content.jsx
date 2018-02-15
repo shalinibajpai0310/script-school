@@ -5,12 +5,11 @@ import '../app.css';
 class HomePageContent extends Component {
  constructor(props){
      super(props);
+    
  }
 
  componentDidMount(){
-    fetch('/script-school/es6')
-      .then(res => res.json())
-      .then(data => console.log("users ",data));
+  
  }
   render() {
     return (

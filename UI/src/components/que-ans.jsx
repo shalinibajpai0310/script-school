@@ -31,7 +31,17 @@ componentWillMount = () =>{
 
 componentWillReceiveProps = () =>{
     console.log("componentWillReceiveProps");
-
+    if(document.querySelector('.show-ans-active') ){
+        const activeAnswerArray = document.querySelectorAll('.show-ans-active');
+        console.log(Array.from(activeAnswerArray));
+        Array.from(activeAnswerArray).map(  doc => {
+            doc.classList.remove('show-ans-active');
+        })
+        const showAnsBlock = document.getElementsByClassName('show-answer');
+          Array.from(showAnsBlock).map( ans => {
+            ans.style.display = "none";
+        })
+    }
 }
   render() {
       debugger;
