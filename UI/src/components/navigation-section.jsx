@@ -13,9 +13,12 @@ class NavigationSection extends Component {
     }
     
   componentDidMount(){
-      const activeClassLink = document.querySelector('.active').parentElement.parentElement;
+      if( document.querySelector('.active')){
+             const activeClassLink = document.querySelector('.active').parentElement.parentElement;
             activeClassLink.previousElementSibling.classList.add("menu-box-open");
             activeClassLink.style.display = 'block';
+      }
+     
  }
 
    toggleMenu = (e) =>{

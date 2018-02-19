@@ -28,13 +28,14 @@ class App extends Component {
 
   componentDidMount(){
     window.scrollTo(0, 0)
-      // fetch('/script-school/es6')
-      // .then(res => res.json())
-      // .then(response => {
-      //     this.setState({
-      //         list : response.data
-      //     });
-      // });
+      fetch('/script-school?type=es6')
+      .then(res => res.json())
+      .then(response => {
+        console.log("RESPONSE GET TOPICS LIST",response);
+          this.setState({
+              list : response.data
+          });
+      });
   }
 
   componentWillMount(){

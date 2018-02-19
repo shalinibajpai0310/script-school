@@ -26,7 +26,7 @@ class TopicList extends React.Component{
         let count = 0;
         const renderTopic = function(topic,index){
             count++;
-            if( count < 30)
+            if( count < 10)
                 return(<div className="sc-topic-size">
                         <Link to={`/script-school/es6/${topic.routeKey}`}><span>{topic.topicName}</span></Link>
                     </div>)

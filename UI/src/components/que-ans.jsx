@@ -22,6 +22,13 @@ class QuesAnswer extends Component {
  }
 
  componentDidMount = () => {
+     let topic = this.props.topic;
+      fetch('/script-school?type=es6&topic='+topic)
+      .then(res => res.json())
+      .then(response => {
+        console.log("RESPONSE GET QUESTION ANSWER",response);
+      });
+
      ReactDOM.findDOMNode(this).getElementsByClassName('snap')
      console.log("didMount callled");
  }
@@ -44,7 +51,6 @@ componentWillReceiveProps = () =>{
     }
 }
   render() {
-      debugger;
       console.log("render called");
       const divStyle={
           display:'none'
