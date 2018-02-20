@@ -1,5 +1,6 @@
 import '../node_modules/highlight.js/styles/tomorrow-night-eighties.css';
 import './app.css';
+import './nprogress.css';
 import React, { Component } from 'react';
 import HighLight from 'react-syntax-highlight';
 import beautify  from 'js-beautify';

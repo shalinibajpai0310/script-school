@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import { NavLink,Link } from 'react-router-dom';
 import '../app.css';
+import genericAjax from '../common/genericAjax/GenericAjax';
 
 
 class NavigationBar extends Component {
- constructor(props){
-     super(props);
+ constructor(props,context){
+     super(props,context);
  }
 
+ routeToList(type){
+     let ajaxConfig={
+         "urlKey":"script_school",
+         "type":type,
+         "method": "GET"
+     }
+
+     genericAjax( ajaxConfig ).then( (response) =>{
+         console.log("response ",response);
+         this.context.router.history.push('/script-school/es6');
+     });
+ }
  
   render() {
     return (<section className="container sc-header-container">
@@ -18,9 +31,9 @@ class NavigationBar extends Component {
                 <div>Learn Challenge Update</div>
             </div>
             <div className="col-xs-5">
-                <ul className="nav navbar-nav">
+                <ul className="nav navbar-nav cursor_pos">
                     <li className="active"><a href="#">JS</a></li>
-                    <li><Link to='/script-school/es6'>ES6</Link></li>
+                    <li><a onClick={this.routeToList.bind(this,"es6")}>ES6</a></li>
                     <li><a href="#">ReactJS</a></li>
                     <li><a href="#">AngularJS</a></li>
                     <li><a href="#">Algorithms</a></li>
@@ -57,4 +70,7 @@ class NavigationBar extends Component {
   }
 }
 
+NavigationBar.contextTypes = {
+    router:React.PropTypes.object
+}
 export default NavigationBar;

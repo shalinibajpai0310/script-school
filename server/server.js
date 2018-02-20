@@ -3,12 +3,15 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const data = require('../json/content.js');
-
+var cors = require('cors');
 var filter = require('./filter');
+
+app.use(cors());
 
 app.get('/script-school', (req, res) => {
   var type = req.param('type');
   var topic = req.param('topic');
+  res.header("Access-Control-Allow-Origin", "*");
   if(type && topic){
       let quesAns = filter.quesAns( topic, data.data[req.param('type')] );
       res.send(quesAns);

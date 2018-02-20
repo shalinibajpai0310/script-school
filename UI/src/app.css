@@ -690,3 +690,7 @@ a:visited {
 .btn-danger:hover, .btn-danger:focus, .btn-primary:hover, .btn-primary:focus{
   background: #FF7676;
 }
+
+.cursor_pos{
+  cursor: pointer;
+}
