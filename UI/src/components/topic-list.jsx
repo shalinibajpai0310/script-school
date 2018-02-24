@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../app.css';
 import { NavLink,Link } from 'react-router-dom';
 import {data} from '../json/content';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
 
 class TopicList extends React.Component{
     constructor(props){
@@ -20,6 +23,10 @@ class TopicList extends React.Component{
                this.topic_list.push(obj);
            })
         })
+
+    }
+
+    componentDidMount(){
     }
 
     render(){
@@ -98,3 +105,4 @@ class TopicList extends React.Component{
 
 
 export default TopicList;
+

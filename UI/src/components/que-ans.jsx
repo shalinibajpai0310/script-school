@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import genericAjax from '../common/genericAjax/GenericAjax';
 import beautify  from 'js-beautify';
 import $ from 'jquery';
 import Highlight from 'react-highlight';
 import '../../node_modules/highlight.js/styles/tomorrow-night-eighties.css';
 import '../app.css';
+import {connect} from 'react-redux';
+import {getData,getQuesAns} from '../actions/actions';
+import {bindActionCreators} from 'redux';
 import {data} from '../json/content';
 
 
 
 class QuesAnswer extends Component {
- constructor(props){
-     super(props);
+ constructor(props,context){
+     super(props,context);
      this.state = {load:false};
      }
  
@@ -23,14 +27,19 @@ class QuesAnswer extends Component {
 
  componentDidMount = () => {
      let topic = this.props.topic;
-      fetch('/script-school?type=es6&topic='+topic)
-      .then(res => res.json())
-      .then(response => {
-        console.log("RESPONSE GET QUESTION ANSWER",response);
-      });
+     if( this.props.quesAns === null){
+          let ajaxConfig={
+                "urlKey":"script_school",
+                "type":"es6",
+                "topic": topic,
+                "method": "GET"
+            }
 
-     ReactDOM.findDOMNode(this).getElementsByClassName('snap')
-     console.log("didMount callled");
+             genericAjax( ajaxConfig ).then( (response) =>{
+                 console.log(response);
+                this.props.getQuesAns(response);
+            });
+     }
  }
 componentWillMount = () =>{
     console.log("willMount called");
@@ -68,7 +77,7 @@ componentWillReceiveProps = () =>{
     return (
       <div>
           <div className="topic-header text-center">{title}</div>
-                { questions && questions.map( (list , index ) => {
+                { this.props.quesAns && this.props.quesAns.map( (list , index ) => {
                     return (
                         <div className="question-set-section" key={index}>  
                             <div className="console-question">{index+1}. What shows in the console ?</div>
@@ -101,4 +110,17 @@ componentWillReceiveProps = () =>{
   }
 }
 
-export default QuesAnswer;
+//export default QuesAnswer;
+function mapStateToProps(state) {
+  return {
+      quesAns: state.getQuesAnswers
+
+  };
+}
+
+function matchDispatchToProps(dispatch) {
+  return (bindActionCreators({
+      getQuesAns
+  }, dispatch));
+}
+export default (connect(mapStateToProps, matchDispatchToProps)(QuesAnswer));

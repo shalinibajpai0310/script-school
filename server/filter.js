@@ -5,8 +5,11 @@ module.exports = {
                     let obj = {},subTopics=[];
                     obj["menu"] = topic.menu;
                     topic.sub_menu.map( function( sub_topic){
+                        let obj1={};
                         if(sub_topic.hasOwnProperty("sub_menu_name")){
-                            subTopics.push(sub_topic["sub_menu_name"])
+                            obj1["sub_topic"] = sub_topic["sub_menu_name"];
+                            obj1["type"] = Object.keys(sub_topic)[1];
+                            subTopics.push(obj1)
                         }
                     });
                     obj["sub_menu_name"] = subTopics;

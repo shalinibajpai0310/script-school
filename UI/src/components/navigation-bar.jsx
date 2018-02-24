@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { NavLink,Link } from 'react-router-dom';
 import '../app.css';
 import genericAjax from '../common/genericAjax/GenericAjax';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {getData} from '../actions/actions';
 
 
 class NavigationBar extends Component {
@@ -17,8 +20,9 @@ class NavigationBar extends Component {
      }
 
      genericAjax( ajaxConfig ).then( (response) =>{
-         console.log("response ",response);
-         this.context.router.history.push('/script-school/es6');
+         console.log(response);
+         this.props.getData(response);
+         this.context.router.history.push('/script-school/'+type);
      });
  }
  
@@ -73,4 +77,16 @@ class NavigationBar extends Component {
 NavigationBar.contextTypes = {
     router:React.PropTypes.object
 }
-export default NavigationBar;
+//export default NavigationBar;
+
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function matchDispatchToProps(dispatch) {
+  return (bindActionCreators({
+    getData
+  }, dispatch));
+}
+export default (connect(mapStateToProps, matchDispatchToProps)(NavigationBar));

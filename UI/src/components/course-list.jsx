@@ -6,19 +6,8 @@ import '../app.css';
 class CourseList extends Component {
  constructor(props){
      super(props);
-     this.getData = this.getData.bind(this);
  }
 
- getData(){
-     fetch('/script-school/es6')
-      .then(res => res.json())
-      .then(response => {
-          this.setState({
-              list : response.data
-          });
-          this.props.history.push('/script-school/es6');
-      });
- }
 
   render() {
     return (<section className="container-fluid sc-course-container">

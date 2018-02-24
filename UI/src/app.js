@@ -28,15 +28,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    window.scrollTo(0, 0)
-      fetch('/script-school?type=es6')
-      .then(res => res.json())
-      .then(response => {
-        console.log("RESPONSE GET TOPICS LIST",response);
-          this.setState({
-              list : response.data
-          });
-      });
+    window.scrollTo(0, 0);
   }
 
   componentWillMount(){
@@ -50,7 +42,7 @@ class App extends Component {
             <MobNavigation/>
           </nav>
           <div className="col-sm-4 col-md-3 col-lg-3 navigation-section">
-            <NavigationSection/>
+            <NavigationSection type={this.props.match.path} topic={this.props.match.params.topic}/>
           </div>
           <div className="col-sm-6 col-md-7 col-lg-7 content-section mobile-content">
            { /*<ContentSection/>*/}
