@@ -1,0 +1,44 @@
+
+.sc-header-container{
+  padding-bottom: 15%;
+}
+
+.sc-navbar-padding{
+  padding-top: 5%;
+}
+
+.sc-span1-style{
+  font-weight: bolder;
+  font-size: large;
+}
+
+.sc-span2-style{
+  font-weight: bolder;
+  font-size: large;
+  color: #72C7DB;
+}
+
+.cursor_pos{
+  cursor: pointer;
+}
+.sc-nav-searchbar{
+      background: #EFEFEF;
+    border: none;
+    height: 40px;
+    padding-left: 10px;
+    width: 70%;
+}
+.sc-heading-tag{
+    padding-top: 25%;
+    text-align: center;
+    color: #554B6F;
+}
+.sc-heading-info-heading{
+  font-size: 24px;
+  letter-spacing: 4.1px;
+  border-bottom: solid 2px #72C7DB;
+}
+.sc-heading-info-subtext{
+    padding-top: 15px;
+    font-size: 13px;
+}

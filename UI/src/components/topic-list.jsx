@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import '../app.css';
+import '../app/app.css';
+import './topic-list.css';
 import { NavLink,Link } from 'react-router-dom';
+import genericAjax from '../common/genericAjax/GenericAjax';
 import {data} from '../json/content';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {getData,getQuesAns} from '../actions/actions';
 
 
 class TopicList extends React.Component{
     constructor(props){
         super(props);
         this.topic_list = [];
+        this.routeToTopic=this.routeToTopic.bind(this)
     }
     
     componentWillMount(){
@@ -26,16 +30,29 @@ class TopicList extends React.Component{
 
     }
 
-    componentDidMount(){
+    routeToTopic( topic){
+         ///let type= this.props.type.split('/');
+          let ajaxConfig={
+                "urlKey":"script_school",
+                "type":"es6",
+                "topic": topic,
+                "method": "GET"
+            }
+
+             genericAjax( ajaxConfig ).then( (response) =>{
+                this.props.getQuesAns(response);
+            });
     }
+
 
     render(){
         let count = 0;
-        const renderTopic = function(topic,index){
+        var renderTopic = (topic,index) => {
+            let me = this;
             count++;
             if( count < 10)
-                return(<div className="sc-topic-size">
-                        <Link to={`/script-school/es6/${topic.routeKey}`}><span>{topic.topicName}</span></Link>
+                return(<div className="sc-topic-size" key={index} onClick={me.routeToTopic.bind(this,topic.routeKey)}>
+                        <NavLink to={`/script-school/es6/${topic.routeKey}`}><span>{topic.topicName}</span></NavLink>
                     </div>)
         }
         return(<section className="container-fluid sc-inner-grid">
@@ -104,5 +121,18 @@ class TopicList extends React.Component{
 }
 
 
-export default TopicList;
+//export default TopicList;
 
+function mapStateToProps(state) {
+  return {
+      quesAns: state.getQuesAnswers
+
+  };
+}
+
+function matchDispatchToProps(dispatch) {
+  return (bindActionCreators({
+      getQuesAns
+  }, dispatch));
+}
+export default (connect(mapStateToProps, matchDispatchToProps)(TopicList));

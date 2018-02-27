@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink,Link } from 'react-router-dom';
-import '../app.css';
+import '../app/app.css';
+import './navigation-bar.css';
 import genericAjax from '../common/genericAjax/GenericAjax';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -20,7 +21,6 @@ class NavigationBar extends Component {
      }
 
      genericAjax( ajaxConfig ).then( (response) =>{
-         console.log(response);
          this.props.getData(response);
          this.context.router.history.push('/script-school/'+type);
      });

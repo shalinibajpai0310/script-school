@@ -4,6 +4,6 @@ import getReducer from '../reducers/getTopicList';
 import getQuesAnswers from '../reducers/getQuesAns';
 
 export default combineReducers({
-  getReducer,
-  getQuesAnswers
+  getReducer : getReducer,
+  getQuesAnswers: getQuesAnswers
 })

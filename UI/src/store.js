@@ -6,7 +6,7 @@ import rootReducer from './modules';
 
 export const history = createHistory();
 
-const initialState = [];
+const initialState = {};
 
 const enhancers = [];
 

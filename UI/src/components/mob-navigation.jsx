@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import React, { Component } from 'react';
-import '../app.css';
+import '../app/app.css';
 
 class MobNavigation extends Component {
   constructor(props){

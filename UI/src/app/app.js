@@ -1,21 +1,20 @@
-import '../node_modules/highlight.js/styles/tomorrow-night-eighties.css';
+import '../../node_modules/highlight.js/styles/tomorrow-night-eighties.css';
 import './app.css';
-import './nprogress.css';
+import '../nprogress.css';
 import React, { Component } from 'react';
 import HighLight from 'react-syntax-highlight';
 import beautify  from 'js-beautify';
-import MobNavigation from './components/mob-navigation';
-import NavigationSection from './components/navigation-section';
-import ContentSection from './components/content-section';
-import RightInfoSection from './components/right-info-section';
-import NavigationBar from './components/navigation-bar';
-import CourseList from './components/course-list';
-import Footer from './components/footer.jsx';
-import TopicList from './components/topic-list';
-import FeedBack from './components/feedback';
-import Subscribe from './components/subscription';
-import HomePageContent from './components/homepage-content';
-import QuesAnswer from './components/que-ans';
+import MobNavigation from '../components/mob-navigation';
+import NavigationSection from '../components/navigation-section';
+import RightInfoSection from '../components/right-info-section';
+import NavigationBar from '../components/navigation-bar';
+import CourseList from '../components/course-list';
+import Footer from '../components/footer.jsx';
+import TopicList from '../components/topic-list';
+import FeedBack from '../components/feedback';
+import Subscribe from '../components/subscription';
+import HomePageContent from '../components/homepage-content';
+import QuesAnswer from '../components/que-ans';
 //import { originalFlow } from './json/sampleFlowData.js';
 
 

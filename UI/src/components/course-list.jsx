@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink,Link } from 'react-router-dom';
-import '../app.css';
+import '../app/app.css';
+import './course-list.css';
 
 
 class CourseList extends Component {

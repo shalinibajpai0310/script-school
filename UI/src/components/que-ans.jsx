@@ -5,7 +5,7 @@ import beautify  from 'js-beautify';
 import $ from 'jquery';
 import Highlight from 'react-highlight';
 import '../../node_modules/highlight.js/styles/tomorrow-night-eighties.css';
-import '../app.css';
+import '../app/app.css';
 import {connect} from 'react-redux';
 import {getData,getQuesAns} from '../actions/actions';
 import {bindActionCreators} from 'redux';
@@ -36,20 +36,15 @@ class QuesAnswer extends Component {
             }
 
              genericAjax( ajaxConfig ).then( (response) =>{
-                 console.log(response);
                 this.props.getQuesAns(response);
             });
      }
  }
-componentWillMount = () =>{
-    console.log("willMount called");
-}
+
 
 componentWillReceiveProps = () =>{
-    console.log("componentWillReceiveProps");
     if(document.querySelector('.show-ans-active') ){
         const activeAnswerArray = document.querySelectorAll('.show-ans-active');
-        console.log(Array.from(activeAnswerArray));
         Array.from(activeAnswerArray).map(  doc => {
             doc.classList.remove('show-ans-active');
         })
@@ -60,7 +55,6 @@ componentWillReceiveProps = () =>{
     }
 }
   render() {
-      console.log("render called");
       const divStyle={
           display:'none'
       }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import '../app.css';
+import '../app/app.css';
+import './footer.css';
+
 
 class Footer extends React.Component{
     constructor(props){

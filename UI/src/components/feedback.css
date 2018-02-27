@@ -1,0 +1,79 @@
+
+.sc-feedback-inner-grid{
+      background: #72C7DB;
+    height: 750px;
+    /*position: relative;*/
+}
+.sc-feedback-outer-grid{
+   position: relative;
+    top: 140px;
+    width: 89%;
+    /*margin-left: 5%;*/
+    /*height: 200px;*/
+    background: white;
+    z-index:1;
+
+}
+.sc-feedback-outer-grid > div:nth-child(1){
+  padding-top: 8%;
+}
+.sc-feedback-padding{
+  padding-bottom: 5%;
+}
+.sc-feedback-text-style1{
+    color: #574D71;
+    letter-spacing: 2.1px;
+    font-size: 20px;
+    padding-bottom: 3%;
+}
+.sc-feedback-text-style1 > span{
+  border-bottom: solid 2px #72C7DB;
+  padding-bottom: 3%;
+}
+.sc-feedback-text-style2{
+  color: #554B6F;
+    font-weight: 900;
+    font-size: 50px;
+    padding-top: 3%;
+}
+.sc-feedback-suggestion{
+  /*padding-left: 5%;*/
+  overflow: hidden;
+    /* border-bottom: solid; */
+    letter-spacing: 1.1px;
+}
+.sc-feedback-border{
+  border-left: solid 1px #72C7DB;
+}
+.sc-feedback-container{
+  padding-left: 8%;
+}
+.sc-feedback-ques{
+  border-bottom: solid 1px #72C7DB;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+.sc-feedback-ques > span:nth-child(2){
+  float: right;
+  font-weight: bolder;
+  color: #554B6F;
+}
+.sc-feedback-btn-container{
+  text-align: right;
+  padding-bottom: 5%;
+}
+.sc-topic-list-btn{
+    
+    /*float: right;*/
+    /* color: #FF7676; */
+    background: #FF7676;
+    border: none;
+    /* padding: 9px;*/
+}
+.sc-feedback-margin{
+  margin-top:9%;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-primary:hover, .btn-primary:focus{
+  background: #FF7676;
+}

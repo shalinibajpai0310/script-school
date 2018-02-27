@@ -1,0 +1,64 @@
+
+.sc-inner-grid{
+    /*height: 410px;
+    position: relative;*/
+    background: #E4E4E4;
+}
+.sc-topic-list-grid{
+    /*position: absolute;*/
+    position: relative;
+    top: 65px;
+    /*width: 89%;*/
+    /*margin-left: 5%;*/
+    /*height: 200px;*/
+    background: white;
+    z-index:1;  
+}
+.sc-subscribe-row{
+  margin: 15% 0 15% 0
+}
+.sc-subscribe-text-style{
+  color: #574D71;
+    font-weight: bolder;
+    padding-top: 20%;
+}
+.sc-subscribe-border{
+  border-right: solid 1px #72C7DB;
+}
+.sc-feedback-text-style1{
+    color: #574D71;
+    letter-spacing: 2.1px;
+    font-size: 20px;
+    padding-bottom: 3%;
+}
+.sc-feedback-text-style1 > span{
+  border-bottom: solid 2px #72C7DB;
+  padding-bottom: 3%;
+}
+.sc-subscribe-container{
+  padding-left: 10%;
+}
+.sc-subscribe-mail input{
+  /*padding-top: 5%;*/
+  background: #EFEFEF;
+    border: none;
+    height: 40px;
+    padding-left: 10px;
+    width: 50%;
+}
+
+.sc-subscribe-mail{
+  padding-top: 10%;
+}
+.sc-subscribe-btn{
+    height: 45px;
+    position: relative;
+    bottom: 0px;
+    background: #FF7676;
+    border: none;
+    border-radius: 0px;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-primary:hover, .btn-primary:focus{
+  background: #FF7676;
+}

@@ -8,11 +8,8 @@ import { Switch,Route,BrowserRouter } from 'react-router-dom';
 import './index.css';
 //import App from './app';
 import HomePageContent from './components/homepage-content';
-import QuesAnswer from './components/que-ans';
-import HomePage from './HomePage';
-import Routers from './routers';
-import App from './app';
-import './app.css';
+import Routers from './app/routers';
+import './app/app.css';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 

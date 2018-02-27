@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getData,getQuesAns} from '../actions/actions';
 import {data} from '../json/content';
-import '../app.css';
+import '../app/app.css';
 
 
 class NavigationSection extends Component {
@@ -15,14 +15,8 @@ class NavigationSection extends Component {
     constructor(props,context){
         super(props,context);
     }
-    
+   
   componentDidMount(){
-      console.log("active ",document.querySelector('.active'));
-      if( document.querySelector('.active')){
-             const activeClassLink = document.querySelector('.active').parentElement.parentElement;
-            activeClassLink.previousElementSibling.classList.add("menu-box-open");
-            activeClassLink.style.display = 'block';
-      }
       if(this.props.getList === null){
           
           let type= this.props.type.split('/');
@@ -32,23 +26,25 @@ class NavigationSection extends Component {
          "method": "GET"
      }
            genericAjax( ajaxConfig ).then( (response) =>{
-            console.log("response section",response);
             this.props.getData(response);
+            // updating the state once again to get active class
+            this.setState({
+                abc:true
+            })
      });
+      }else{
+           this.setState({
+                abc:true
+            })
       }
  }
-
- componentWillReceiveProps(){
-      console.log("active ",document.querySelector('.active'));
- }
-
    toggleMenu = (e) =>{
          $(e.target).toggleClass('menu-box-open');
         $(e.target).next().slideToggle('slow').removeClass('open-links');
     }
 
     routeToTopic = (topic)=>{
-         window.scrollTo(0, 0);
+        //  window.scrollTo(0, 0);
           let type= this.props.type.split('/');
           let ajaxConfig={
                 "urlKey":"script_school",
@@ -58,13 +54,18 @@ class NavigationSection extends Component {
             }
 
              genericAjax( ajaxConfig ).then( (response) =>{
-                 console.log(response);
                 this.props.getQuesAns(response);
                 this.context.router.history.push('/script-school/es6/'+topic);
             });
     }
 
   render() {
+    console.log("renderActive ",document.querySelector('.active'));
+       if( document.querySelector('.active') ){
+             const activeClassLink = document.querySelector('.active').parentElement.parentElement;
+            activeClassLink.previousElementSibling.classList.add("menu-box-open");
+            activeClassLink.style.display = 'block';
+      }
 
     return (
       <div>
@@ -77,8 +78,8 @@ class NavigationSection extends Component {
                     <div className="menu" onClick={this.toggleMenu}>{topics.menu}</div>
                         <ul  className="menu-items list-unstyled">
                         { topics.sub_menu_name && topics.sub_menu_name.map( (subTopic,ind)=>{
-                            return( <li key={ind}><a onClick={this.routeToTopic.bind(this,subTopic.type)}>{subTopic.sub_topic}</a>
-                           {/*<NavLink  to={`/script-school/es6/${subTopic.type}`}>{subTopic.sub_topic}</NavLink>*/}</li>)
+                            return( <li key={ind} onClick={this.routeToTopic.bind(this,subTopic.type)}>{/*<a href="javascript:void(0)" onClick={this.routeToTopic.bind(this,subTopic.type)}>{subTopic.sub_topic}</a>*/}
+                           <NavLink  to={`/script-school/es6/${subTopic.type}`}>{subTopic.sub_topic}</NavLink></li>)
                         })}
                         </ul>                        
                     </div>

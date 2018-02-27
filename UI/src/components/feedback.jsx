@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../app.css';
+import '../app/app.css';
+import './feedback.css';
 
 class FeedBack extends React.Component{
     constructor(props){
@@ -13,7 +14,7 @@ class FeedBack extends React.Component{
                         <div className="col-xs-1"></div>
                         <div className="col-xs-10">
                             <div className="row sc-feedback-padding">
-                                <div className="col-xs-6 ">
+                                <div className="col-xs-6 sc-feedback-margin">
                                     <div className="sc-feedback-text-style1">
                                         <span>Have Any suggestion?</span>
                                     </div>

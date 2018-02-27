@@ -1,0 +1,52 @@
+
+.sc-course-container{
+  background:  #EFEFEF
+}
+.sc-course-layout{
+  padding: 10% 0 10% 0;
+}
+.sc-course-grid1{
+  padding-bottom: 2%;
+}
+.sc-box-odd{
+  border-bottom: solid 10px #4CB1C9;
+}
+.sc-box-title-odd{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    font-weight: bolder;
+    font-size: 28px;
+    color: #4CB1C9;
+}
+.sc-box-subtitle{
+  padding-bottom: 10%
+}
+.sc-box-subtitle-count{
+  font-weight: bold;
+  color: #4CB1C9;
+  font-size: 20px;
+}
+
+.sc-box-subtitle-desc{
+  font-size: 14px;
+  color: #C9C9D1;
+}
+.sc-box-even{
+  border-bottom: solid 10px #6D6DB0;
+}
+
+
+.sc-box-title-even{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    font-weight: bolder;
+    font-size: 28px;
+    color: #6D6DB0;
+}
+.box{
+  /*height: 250px;*/
+    width: 100%;
+    background: #fff; 
+    /*padding-left: 15%;*/
+
+}
